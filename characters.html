@@ -32,6 +32,7 @@
     .layout {
       position: relative;
       width: 80vw;
+      
       aspect-ratio: 16 / 7; 
       background: url(https://meddiscordapp.net/attachments/1093968552853254276/1499833133644775656/image.png?ex=69f63bf4&is=69f4ea74&hm=cb4d0ff9cee6e561bfdf90b1254ca8f5f0230c9b1cba0fb9217ed3b924ba48e1&=&format=webp&quality=lossless) center/contain no-repeat;
     }
@@ -40,12 +41,6 @@
       position: absolute;
       transform: translate(-50%, -50%);
       aspect-ratio: 1 / 1;
-    }
-
-    @media (min-width: 768px) {
-     .box {
-        transform: scale(1.5)
-     }
     }
 
     .jan-img { top: 24%; left: 37%; width: 21.5%; }
@@ -84,13 +79,13 @@
 }
 
 .modal__window {
-  position: relative;
+    position: relative;
+  overflow-y: auto;
   background-image: url('https://file.garden/afOYRSlbYh0xRrrF/bg3.png');
   background-size: cover;
   padding: 2em 2em;
   width:700px;
   height: 500px;
-  overflow-y: scroll;
   color:#fff;
   border: 1px solid #fff;
 }
@@ -101,6 +96,9 @@
 }
 
 .modal__close {
+  position: sticky;
+  top: 0;
+  float: right;
 font-size: 1.5rem;
   position: absolute;
   top: 5px;
@@ -121,6 +119,32 @@ font-size: 1.5rem;
 .icon {background-color: #d60707;min-height: 20px; min-width: 20px; padding: .5px; border-radius: 0; } 
 
 a {color:#d60707}
+
+@media (max-width: 768px) {
+
+  .modal__close {
+    font-size: 2rem;
+    padding: 10px 14px;
+  }
+
+  body {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .box {
+    position: static;
+    transform: none;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+}
   </style>
 </head>
 
